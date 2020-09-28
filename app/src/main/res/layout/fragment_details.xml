@@ -15,12 +15,27 @@
             android:id="@+id/profilePics"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_round_face_24" />
 
+        <ImageView
+            android:id="@+id/uploadPics"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/edge_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_image_24"
+            android:tint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="8dp"
+            tools:layout_editor_absoluteY="-8dp" />
+
         <LinearLayout
+            android:id="@+id/containInfo"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal"
@@ -46,7 +61,7 @@
                     android:id="@+id/nameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:text="Username"
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:textSize="24sp"/>
 
@@ -54,7 +69,7 @@
                     android:id="@+id/nameText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Emmy"
+                    tools:text="Emmy"
                     style="@style/TextAppearance.AppCompat.Headline"
                     android:textSize="24sp"/>
 
@@ -67,5 +82,116 @@
                 tools:srcCompat="@drawable/ic_baseline_edit_24" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containInfo2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:weightSum="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/containInfo">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/ic_round_email_24" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="6"
+                android:padding="8dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/emailTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Emmy"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="24sp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="2"
+                tools:srcCompat="@drawable/ic_baseline_edit_24" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containInfo3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:weightSum="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/containInfo2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/ic_round_phone_24" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="6"
+                android:padding="8dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/phoneTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/phoneText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Emmy"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="24sp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="2"
+                tools:srcCompat="@drawable/ic_baseline_edit_24" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@android:color/white"
+            android:background="@drawable/edge_bg"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/containInfo3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

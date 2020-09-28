@@ -22,13 +22,30 @@ public class PrefConfig {
         editor.commit();
     }
 
+    public void writeToken(String token){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(context.getString(R.string.pref_userToken), token);
+        editor.commit();
+    }
+
+    public void writeUserId(String id){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(context.getString(R.string.pref_userID), id);
+        editor.commit();
+    }
+
     public boolean readLoginStatus(){
         return sharedPreferences.getBoolean(context.getString(R.string.pref_login), false);
     }
 
-    public String readName(){
-        return sharedPreferences.getString(context.getString(R.string.pref_user), "User");
+    public String readId(){
+        return sharedPreferences.getString(context.getString(R.string.pref_userID), "User");
     }
+
+    public String readToken(){
+        return sharedPreferences.getString(context.getString(R.string.pref_userToken),"Token");
+    }
+
 
     public void  displayToast(String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

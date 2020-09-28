@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (prefConfig.readLoginStatus()){
+                setUpViewPager(viewPager);
                 setViewPager(2);
             }else {
                 setUpViewPager(viewPager);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addFragment(new LoginFragment(), "Login");
         adapter.addFragment(new RegisterFragment(), "Register");
+        adapter.addFragment(new DetailsFragment(), "Details");
         viewPager.setAdapter(adapter);
     }
 

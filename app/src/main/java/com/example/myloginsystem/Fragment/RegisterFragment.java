@@ -1,5 +1,6 @@
 package com.example.myloginsystem.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myloginsystem.MainActivity;
+import com.example.myloginsystem.NoInternetActivity;
 import com.example.myloginsystem.R;
 import com.example.myloginsystem.User;
 
@@ -74,15 +76,17 @@ public class RegisterFragment extends Fragment {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-
+                Log.i(TAG, "onResponse: ");
                 if (response.body() != null){
+                    Log.i(TAG, "onResponse: "+response.toString());
                     MainActivity.prefConfig.displayToast(response.body().toString());
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                Intent intent = new Intent(getActivity(), NoInternetActivity.class);
+                startActivity(intent);
             }
         });
 
